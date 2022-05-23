@@ -19,3 +19,5 @@
 
 # 1st day
 - 주제선정 : time timer 에서 착안한 to do list 결합형 알림 시스템
+- referece search : https://www.todomate.net / https://todoist.com / 
+- 기능 구체화
