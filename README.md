@@ -19,5 +19,7 @@
 
 # 1st day
 - 주제선정 : time timer 에서 착안한 to do list 결합형 알림 시스템
-- referece search : https://www.todomate.net / https://todoist.com / 
-- 기능 구체화
+- referece search : https://www.todomate.net / https://todoist.com / https://vclock.kr/timer / https://pomofocus.io / https://time-timer.netlify.app / 
+- 기능 구체화 : 넣을 기능들 전부 나열 및 구성
+
+- 구글 파이어베이스 활용 알아볼것.(https://firebase.google.com/?hl=ko)
