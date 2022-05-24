@@ -5,7 +5,8 @@
 
 # 계획 수립
 - 1st day : 주제선정 및 리서치/git setting 및 토의
-- 2nd day : ?
+- 2nd day : ui 설계 1원칙 설립, 디자인 테마 설정, 사용성(목적성) 재정의
+- 3rd day : ?
 
 # to do
 - 주제 선정 및 리서치
@@ -23,5 +24,14 @@
 - 주제선정 : time timer 에서 착안한 to do list 결합형 알림 시스템
 - referece search : https://www.todomate.net / https://todoist.com / https://vclock.kr/timer / https://pomofocus.io / https://time-timer.netlify.app / https://store.steampowered.com/app/1369320/Virtual_Cottage/ / https://rainymood.com/
 - 기능 구체화 : 넣을 기능들 전부 나열 및 구성
-
 - 구글 파이어베이스 활용 알아볼것.(https://firebase.google.com/?hl=ko)
+-serviec name : checky
+
+# 2nd day
+- ui 인터페이스 1원칙 : 원형 타임타이머 인터페이스 화면 중앙 배치, 가리지 않는다
+- 라이트모드, 다크모드 컬러칩 설정
+- 서비스 심볼 로고 생성
+- 메인폰트 설정
+- 사용성(목적성, 사용환경, 사용상황) 재정의 및 구체화
+
+- ->우선 인터페이스 뼈대부터 디자인, 이후 세부 기능을 어떻게 넣고 구현할 수 있을 것인지 고민할것.
