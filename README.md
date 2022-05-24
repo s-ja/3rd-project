@@ -1,6 +1,6 @@
 # 3rd-project
 한울직업전문학교 스마트 ux/ui 디자인 세번째 프로젝트
-- https://assets.adobe.com/id/urn:aaid:sc:AP:91d550ec-b8f2-44f5-be78-eb88725236c3?view=difile
+- https://assets.adobe.com/id/urn:aaid:sc:AP:2e6c62d5-7755-43f2-bf1a-e7e76c270d0d?view=difile
 - https://www.figma.com/file/ucMSEFRsezxEDvZ17ZCnuZ/Untitled?node-id=0%3A1
 
 # 계획 수립
