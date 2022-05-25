@@ -1,6 +1,5 @@
 # 3rd-project
 한울직업전문학교 스마트 ux/ui 디자인 세번째 프로젝트
-- https://assets.adobe.com/id/urn:aaid:sc:AP:91d550ec-b8f2-44f5-be78-eb88725236c3?view=difile
 - https://www.figma.com/file/ucMSEFRsezxEDvZ17ZCnuZ/Untitled?node-id=0%3A1
 
 # 계획 수립
@@ -25,6 +24,7 @@
 - referece search : https://www.todomate.net / https://todoist.com / https://vclock.kr/timer / https://pomofocus.io / https://time-timer.netlify.app / https://store.steampowered.com/app/1369320/Virtual_Cottage/ / https://rainymood.com/
 - 기능 구체화 : 넣을 기능들 전부 나열 및 구성
 - 구글 파이어베이스 활용 알아볼것.(https://firebase.google.com/?hl=ko)
+- 채팅어플리케이션 기능 활용 방법중 하나 (https://socket.io)
 -serviec name : checky
 
 # 2nd day
@@ -37,4 +37,5 @@
 
 # 3rd day
 - 인터페이스 구성 방향 설정, 디자인 완성 목표(프로토타이핑 포함)
+- 디자인 의도와는 다른 암시성 제거를 위한 컬러웨이 대폭 수정
 - 사용성 개선안 기록
