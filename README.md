@@ -45,7 +45,12 @@
 - 평가 요소 중 기획 -> 아이디어 추출, 시장조사, 산업체 수요조사(마인드맵, 팀원과의 논의 사항) = 시각화 필요성, 그래픽 작업 기간 연장 필요
 - 3일차 디자인 무드보드 이어서 완성, 기획된 페르소나 그래픽 작업, 할일 리스트 추가 사용법에 문제점 수정 필요
 - 스토리 보드 작업, 사이트 맵, 자료구조
+- 4일차 참고 사항및 메모 링크 : https://docs.google.com/document/d/1GoX1a0fpFOMm8_wSkHqsJh3VS0INFETxRWQOC6xp_gw/edit?usp=sharing
 
 # 5th day
+- 가장 기본은 입력과 출력
 - 페르소나 작업 완료 후 스토리보드 구성 시작 / 모바일 페이지 추가작업 없을시 그래픽 작업은 이것으로 마무리 예상
-- 기본구조 구현 작업 시작
+- 기본구조 구현 작업 시작 참고 : https://www.jqueryscript.net/time-clock/SVG-Based-Circular-Timer-Plugin-For-jQuery-Circle-Timer.html
+- ajax 활용 로컬스토리지에 할 일 목록 저장 및 삭제
+- 로컬스토리지와 인덱스드 db
+- 새로고침시에도 유지되어야 하는가?
