@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/circletimer.css">
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script/circletimer.js"></script>
+    <title>CHECKY</title>
+</head>
+<body>
+    <h1>CHECKY TODO LIST TIMER</h1>
+    <div id="logo">
+        <a href="#">
+            <img src="./images/logo.png" alt="logo">
+        </a>
+    </div>
+    <div id="list-icon">
+        <img src="./images/list-icon.png" alt="llist-icon">
+    </div>
+    <div id="list-window">
+        <div class="input-form">
+            <h2>Add Timer</h2>
+            <input type="text" id="todoText" name="todoText" placeholder="NAME">
+            <input type="text" id="todoTime" name="todoTime" placeholder="TIME">
+        </div>
+        <div class="todo-list">
+            <h2>Works To Do</h2>
+            <ul>
+                <li>
+                    Works To Do 60min
+                    <div class="edit-bt"><img src="./images/edit-bt.png" alt="edit-bt"></div>
+                    <div class="delete-bt"><img src="./images/delete-bt.png" alt="delte-bt"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="switch-list">
+        <div id="light-dark-icon"><img src="./light-dark-icon.png" alt="light-dark-icon"></div>
+        <div id="theme-icon"><img src="./theme-icon.png" alt="theme-icon"></div>
+    </div>
+    <div class="example">
+        <div id="example-timer"></div>
+        <input type="text" id="num" placeholder="분을 입력해주세요">
+        <div id="ct-circle-container"></div>
+        <p>Time Elapsed: <span id="time-elapsed">0</span>ms</p>
+        <button id="inputBtn">start</button>
+    </div>
+    <script src="./script/main.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
