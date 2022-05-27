@@ -25,9 +25,9 @@ $(function(){
             // 시작 버튼
             $("#example-timer").circletimer("start");
 
-            // $("#start").on("click", function() {
-            //     $("#example-timer").circletimer("start");
-            // });
+            $("#start").on("click", function() {
+                $("#example-timer").circletimer("start");
+            });
 
             // 일시정지 버튼
             $("#pause").on("click", function() {
@@ -38,7 +38,10 @@ $(function(){
             $("#stop").on("click", function() {
                 $("#example-timer").circletimer("stop");
             });
-
+            
+            $("#add").on("click", function() {
+                $("#example-timer").circletimer("add", 1000);
+            });
         } else {
             alert("숫자만 입력해주세요");
         };
