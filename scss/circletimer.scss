@@ -1,3 +1,58 @@
+$colors:(
+  basic_dark:(
+    main_bg:#222222,
+    main_timer:#bf0504,
+    font_main:#f2f2f2,
+    font_point:#e84c3c,
+    sub_point:#beaaa9,
+  ),
+  basic_light:(
+    main_bg:#F1EBC7,
+    main_timer:#E84C3C,
+    font_main:#400201,
+    font_point:#DA0B42,
+    sub_point:#35889A,
+  ),
+  ocean:(
+    main_bg:#031727,
+    main_timer:#18C29C,
+    font_main:#88F9D4,
+    font_point:#0B877D,
+    sub_point:#126872,
+  ),
+  garden:(
+    main_bg:#567317,
+    main_timer:#D6D979,
+    font_main:#F2F2F2,
+    font_point:#BFAC95,
+    sub_point:#86A614,
+  ),
+  spring:(
+    main_bg:#F8C053,
+    main_timer:#EEEE59,
+    font_main:#D2EA42,
+    font_point:#A76CC8,
+    sub_point:#EFE14F,
+  ),
+  tachometer:(
+    main_bg:#03060D,
+    main_timer:#D8042C,
+    font_main:#8CB9F2,
+    font_point:#F24465,
+    sub_point:#030A8C,
+  ),
+  oblivion:(
+    main_bg:#0B0D0A,
+    main_timer:#40040E,
+    font_main:#F2F2F2,
+    font_point:#828C81,
+    sub_point:#4F5951,
+  ),
+);
+.d_none{
+  display: none;
+}
+
 #ct-circle-container {
   width: 100%;
   height: 100%;
