@@ -1,9 +1,49 @@
+var todos = [];
 $(function(){
-
     // timer script
-
+    function checkForm(){
+        if($("#todoText").val() === "") {
+            alert("할일을 입력하세요");
+            $("#todoText").focus();
+            return false;
+        }
+        if($("#todoTime").val() === "") {
+            alert("시간을 입력하세요");
+            $("#todoTime").focus();
+            return false;
+        }
+    }
+    function clearInput(){
+        $("#todoText").val(null);
+        $("#todoTime").val(null);
+        $("#todoText").focus();
+    }
+    function todoInput(toLocal){
+        var _todo = {title: $("#todoText").val(), time: $("#todoTime").val()};
+        clearInput();
+        todos.push(_todo);
+        toLocal(todos, loadData);
+    }
+    function toLocal(_todo, loadData){
+        localStorage.setItem("todoItem", JSON.stringify(_todo));
+        var _storage = JSON.parse(localStorage.getItem("todoItem"));
+        loadData(_storage);
+    }
+    function loadData(_storage){
+        var data = _storage;
+        data.forEach(function(todo, index){
+            console.log(todo.title, todo.time, index)
+            // var htmlString;
+            // for(var i=0; i<=index; i++){
+            //     htmlString += `<li>${key.title} <span>${key.time}</span></li>`
+            // }
+            // $("#lists").html(htmlString)
+        })
+    }
     // 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
     $("#inputBtn").click(function(){
+        // 할일과 시간을 읽어온다
+       todoInput(toLocal);
         // 입력한 시간을 inputVal에 저장
         var inputVal = $("#num").val();
 
@@ -43,7 +83,7 @@ $(function(){
                 $("#example-timer").circletimer("add", 1000);
             });
         } else {
-            alert("숫자만 입력해주세요");
+            checkForm();
         };
     });
     // timer script end
