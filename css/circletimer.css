@@ -1,5 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
 .d_none {
   display: none;
+}
+
+body {
+  font-family: "Gothic A1", sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #222222;
+  color: #f2f2f2;
+}
+
+.logo {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 1000;
+}
+
+.logo > img {
+  width: 150px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.blur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  display: none;
+}
+
+.input_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.input_form input {
+  width: 80%;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid #e84c3c;
+  color: #f2f2f2;
+  font-size: 2em;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.input_form input::placeholder {
+  color: #e84c3c;
+  font-weight: 700;
+}
+
+.input_form input:focus {
+  outline: none;
+}
+
+.input_form button {
+  background: none;
+  border: none;
+  color: #e84c3c;
+  font-size: 2rem;
+}
+
+.quote {
+  text-align: center;
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+
+.todo_list {
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  overflow: hidden;
+  font-size: 1.2em;
+}
+
+.list_title {
+  font-weight: 900;
+  font-size: 2em;
+  color: #e84c3c;
+}
+
+.added_list {
+  width: 350px;
+  height: 280px;
+  border-bottom: 2px solid #e84c3c;
+  margin-bottom: 10px;
+}
+
+.added_works {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add_todo {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+
+.add_todo span {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.5em;
+  color: #e84c3c;
+  text-indent: 5px;
+}
+
+.add_todo input {
+  background: none;
+  border: none;
+  color: #f2f2f2;
+  border-bottom: 2px solid #e84c3c;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.add_todo input::placeholder {
+  text-transform: uppercase;
+  color: #e84c3c;
+}
+
+.add_todo input:focus {
+  outline: none;
+}
+
+.add_todo :nth-child(3) {
+  width: 40px;
+}
+
+.add_todo button {
+  background: none;
+  border: none;
+  color: #e84c3c;
+  font-size: 1.25em;
+}
+
+.theme_btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  font-size: 1.85em;
+}
+
+.option_btn {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+}
+
+.example {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#example-timer {
+  width: 500px;
+  height: 500px;
 }
 
 #ct-circle-container {
@@ -7,13 +199,13 @@
   height: 100%;
 }
 #ct-circle-container svg {
+  width: 100%;
   height: 100%;
   transform: rotate(-90deg);
-  width: 100%;
 }
 #ct-circle-container svg circle {
   fill: none;
-  stroke: #17a768;
+  stroke: #bf0504;
   stroke-dashoffset: 0;
   stroke-width: 50%;
 }
