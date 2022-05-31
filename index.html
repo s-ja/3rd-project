@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/04c1ea1f1c.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     <link rel="stylesheet" href="./css/style.css">
@@ -19,54 +20,58 @@
     <title>CHECKY</title>
 </head>
 <body>
-    <h1 class="d_none">CHECKY TODO LIST TIMER</h1>
-    <div id="logo">
+    <div id="logo" class="logo">
         <a href="/">
-            <img src="./images/logo.png" alt="logo">
+            <img src="./images/logo_dark.png" alt="logo">
         </a>
     </div>
-    <div id="list-icon">
-        <img src="./images/list-icon.png" alt="list-icon">
-    </div>
-    <div id="list-window">
-        <div class="input-form">
-            <h2>Add Timer</h2>
+    <div class="landing">
+        <div class="input_form">
+            <h2 class="quote">
+                There is no ‘Right’ Time<br>
+                Just Time<br>
+                And what you do with it
+            </h2>
             <input type="text" id="todoText" name="todoText" placeholder="NAME">
             <input type="text" id="todoTime" name="todoTime" placeholder="TIME">
         </div>
-        <div class="todo-list">
-            <h2>Works To Do</h2>
+    </div>
+    <div id="list-window" class="manipulation d_none">
+        <div class="todo_list">
+            <h2 class="list_title">Works To Do</h2>
             <ul>
                 <li>
-                    Works To Do 60min
-                    <div class="edit-bt">
-                        <span class="material-icons">border_color</span>
-                        <!-- <img src="./images/edit-bt.png" alt="edit-bt"> -->
-                    </div>
-                    <div class="delete-bt">
-                        <span class="material-icons">delete</span>
-                        <img src="./images/delete-bt.png" alt="delete-bt">
-                    </div>
+                    <ul class="list">
+                        <li>Jobs to be Done</li> 
+                        <li>setted time</li>
+                        <li>
+                            <div class="edit-bt">
+                                <span class="material-icons">border_color</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="delete-bt">
+                                <span class="material-icons">delete</span>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
-    </div>
-    <div id="switch-list">
-        <!-- <div id="light-dark-icon">
-            <img src="./light-dark-icon.png" alt="light-dark-icon">
-        </div> -->
-        <div id="theme-icon">
-            <span class="material-icons">palette</span>
-            <!-- <img src="./theme-icon.png" alt="theme-icon"> -->
+        <div id="switch-list">
+            <div id="theme-icon" class="theme_btn">
+                <span class="material-icons">palette</span>
+            </div>
         </div>
     </div>
     <div class="example">
         <div id="example-timer"></div>
         <input type="text" id="num" placeholder="분을 입력해주세요">
         <div id="ct-circle-container"></div>
-        <p>Time Elapsed: <span id="time-elapsed">0</span>ms</p>
+        <!-- <p>Time Elapsed: <span id="time-elapsed">0</span>ms</p> -->
         <button id="inputBtn">start</button>
     </div>
+
     <script src="./script/main.js"></script>
     <script>
         

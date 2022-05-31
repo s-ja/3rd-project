@@ -59,10 +59,14 @@
 - 주말 작업 예정이었던 스토리보드 완성
 - 스토리 보드 작업중 색깔 테마 선택 화면 디자인 안된 부분 발견 / 추가로 테마에 따른 라이트/다크 컬러웨이 구분 생각 못했음 -> 라이트/다크 전환 버튼을 없애고 그 기능을 테마선택 기능에 합침
 - 컬러웨이에 따른 색깔 함수를 main_back/main_timer/fint_main/font_point/sub_point로 나눔
--
-
 - 구현 단계 설정 : UI구현(입력과 UI에서의 반영) -> 브라우저 저장소(cookie, localStorage, indexedDB) 중간 경유 구현 / 새로고침해도 유지되게끔 -> 테마 선택기능과 스트리밍 기능 추가
 - streaming : 유튜브 플레이리스트, 사운드클라우드 플레이리스트 등등 자체 음원 내포보다 좋은 방법으로 예상
 - 자료구조가 크지 않으므로 AJAX비동기 기능 활용까지는 갈 필요가 없을것
 - https://developer.mozilla.org/ko/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API (localStroage 사용법)
 - Todo Timer - CodePen : https://codepen.io/BltzLcht/pen/gMBGBB
+
+# 7th day
+- 테마 선택 기능 구현 방법에 대한 고민 -> 기본적인 UI구현 완료 후에 다시 생각할것
+- https://docs.google.com/document/d/1ikM8p92937tdJLeF9oLKSz-IStx4A7gtk_E6PBAJU6g/edit?usp=sharing
+- https://sass-lang.com/documentation/modules/map
+- UI구현과 기능구현으로 역할 분담
