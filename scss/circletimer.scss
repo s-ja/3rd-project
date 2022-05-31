@@ -51,6 +51,12 @@ $colors:(
     sub_point:#4F5951,
   ),
 );
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
 .d_none{
   display: none;
 }
@@ -66,21 +72,32 @@ body{
   top: 30px;
   left: 30px;
   // background: gold;
+  z-index: 1000;
 }
 .logo > img{
   width: 150px;
   height: 50px;
   object-fit: contain;
 }
+.blur{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  display: none;
+}
 .input_form{
   // display: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 10px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  z-index: 1000;
 }
 .input_form input{
   width: 80%;
@@ -100,31 +117,107 @@ body{
 .input_form input:focus{
   outline: none;
 }
+.input_form button{
+  background: none;
+  border: none;
+  color: #e84c3c;
+  font-size: 2rem;
+}
 .quote{
   text-align: center;
   font-weight: 100;
   font-size: 2.5rem;
+}
+
+.todo_list{
+  position: fixed;
+  left: 40px;
+  bottom: 40px;
+  overflow: hidden;
+  font-size: 1.2em;
 }
 .list_title{
   font-weight: 900;
   font-size: 2em;
   color: #e84c3c;
 }
-.list{
+.added_list{
+  width: 350px;
+  height: 280px;
+  border-bottom: 2px solid #e84c3c;
+  margin-bottom: 10px;
+}
+.added_works{
   display: flex;
   column-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.add_todo{
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+.add_todo span{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: .5em;
+  color: #e84c3c;
+  text-indent: 5px;
+}
+.add_todo input{
+  background: none;
+  border: none;
+  color: #f2f2f2;
+  border-bottom: 2px solid #e84c3c;
+  font-weight: 100;
+  font-size: 18px;
+}
+.add_todo input::placeholder{
+  text-transform: uppercase;
+  color: #e84c3c;
+}
+.add_todo input:focus{
+  outline: none;
+}
+.add_todo :nth-child(2){
+  // width: 180px;
+}
+.add_todo :nth-child(3){
+  width: 40px;
+}
+.add_todo button{
+  background: none;
+  border: none;
+  color: #e84c3c;
+  font-size: 1.25em;
 }
 
 .theme_btn{
   position: fixed;
   right: 30px;
   bottom: 30px;
+  font-size: 1.85em;
 }
+.option_btn{
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 2em;
+}
+
 .example{
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+#example-timer{
+  width: 500px;
+  height: 500px;
 }
 #ct-circle-container {
   width: 100%;
