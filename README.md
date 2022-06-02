@@ -70,3 +70,8 @@
 - https://docs.google.com/document/d/1ikM8p92937tdJLeF9oLKSz-IStx4A7gtk_E6PBAJU6g/edit?usp=sharing
 - https://sass-lang.com/documentation/modules/map
 - UI구현과 기능구현으로 역할 분담
+
+# 8th day(22/06/02)
+- 사이트 프로젝트(NCS평가) 남주산업 작업
+- 기본 UI 작업 90% 가량 완성
+- 구현 작업 시작 후 타임테이블 구성 필요
