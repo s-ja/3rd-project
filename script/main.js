@@ -13,9 +13,18 @@ var todos = [];
     //     }
     // }
 $(function(){
-    var _storage = JSON.parse(localStorage.getItem("todoItem"));
-    loadData(_storage);    
-})
+    var itemCheck = localStorage.getItem("todoItem");
+    if (itemCheck == null){
+        localStorage.setItem("todoItem", []);
+    } else {
+        var _storage = JSON.parse(localStorage.getItem("todoItem"));
+        loadData(_storage);
+        todos = _storage;
+    };
+    $("#inputBtn").click(function(){
+        todoInput(toLocal);
+    });
+});
 function clearInput(){
     $("#todoText").val(null);
     $("#num").val(null);
@@ -35,7 +44,7 @@ function toLocal(_todo, loadData){
 function loadData(_storage){
     var data = _storage;
     Array.from(data).forEach(function(todo, index){
-        var htmlString;
+        var htmlString = '';
         for(var i=0; i<=index; i++){
             htmlString +=
             `<li>
@@ -60,13 +69,13 @@ function loadData(_storage){
                         </button>
                     </li>
                 </ul>
-            </li>`
+            </li>`;
         };
         $(".added_list").html(htmlString);
     });
 };
 // 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
-$("#inputBtn").click(function(){
+$("#startBtn").click(function(){
     // 할일과 시간을 읽어온다
     todoInput(toLocal);
     // 입력한 시간을 inputVal에 저장
