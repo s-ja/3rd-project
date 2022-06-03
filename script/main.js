@@ -43,36 +43,46 @@ function toLocal(_todo, loadData){
 };
 function loadData(_storage){
     var data = _storage;
-    Array.from(data).forEach(function(todo, index){
-        var htmlString = '';
-        for(var i=0; i<=index; i++){
-            htmlString +=
-            `<li>
-                <ul class="added_works">
-                    <li>
-                        <i class="fa-solid fa-bars"></i>
-                    </li>
-                    <li>
-                        <ul class="setlist">
-                            <li>${todo.title}</li>
-                            <li>${todo.time}</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <button class="edit-bt">
-                            <span class="material-icons">border_color</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="delete-bt">
-                            <span class="material-icons">delete</span>
-                        </button>
-                    </li>
-                </ul>
-            </li>`;
-        };
-        $(".added_list").html(htmlString);
-    });
+    // console.log(data);
+    var htmlString = '';
+    data.map(function(i,o){
+        console.log(i.title,o);
+    })
+    // for(var todo of data){
+    //     console.log(todo.title, todo.time, todo.);
+    // }
+    // data.forEach(function(todo, index){
+    //     console.log(todo, index);
+    //     for(var i=0; i<index; i++){
+    //         console.log(i);
+    //         htmlString +=
+    //         `<li>
+    //             <ul class="added_works">
+    //                 <li>
+    //                     <i class="fa-solid fa-bars"></i>
+    //                 </li>
+    //                 <li>
+    //                     <ul class="setlist">
+    //                         <li>${todo.title}</li>
+    //                         <li>${todo.time}</li>
+    //                     </ul>
+    //                 </li>
+    //                 <li>
+    //                     <button class="edit-bt">
+    //                         <span class="material-icons">border_color</span>
+    //                     </button>
+    //                 </li>
+    //                 <li>
+    //                     <button class="delete-bt">
+    //                         <span class="material-icons">delete</span>
+    //                     </button>
+    //                 </li>
+    //             </ul>
+    //         </li>`;
+    //     };
+    //     // console.log(htmlString);
+    // });
+    $(".added_list").html(htmlString);
 };
 
 $(function(){
