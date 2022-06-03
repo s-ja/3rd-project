@@ -1,17 +1,5 @@
 var todos = [];
     // timer script
-    // function checkForm(){
-    //     if($("#todoText").val() === "") {
-    //         alert("할일을 입력하세요");
-    //         $("#todoText").focus();
-    //         return false;
-    //     }
-    //     if($("#num").val() === "") {
-    //         alert("시간을 입력하세요");
-    //         $("#num").focus();
-    //         return false;
-    //     }
-    // }
 $(function(){
     var itemCheck = localStorage.getItem("todoItem");
     if (itemCheck == null){
@@ -25,6 +13,18 @@ $(function(){
         todoInput(toLocal);
     });
 });
+function checkForm(){
+    if($("#todoText").val() === "") {
+        alert("할일을 입력하세요");
+        $("#todoText").focus();
+        return false;
+    }
+    if($("#num").val() === "") {
+        alert("시간을 입력하세요");
+        $("#num").focus();
+        return false;
+    }
+}
 function clearInput(){
     $("#todoText").val(null);
     $("#num").val(null);
@@ -38,7 +38,7 @@ function todoInput(toLocal){
 };
 function toLocal(_todo, loadData){
     localStorage.setItem("todoItem", JSON.stringify(_todo));
-    var _storage = JSON.parse(localStorage.getItem("todoItem"));
+    _storage = JSON.parse(localStorage.getItem("todoItem"));
     loadData(_storage);
 };
 function loadData(_storage){
@@ -74,50 +74,51 @@ function loadData(_storage){
         $(".added_list").html(htmlString);
     });
 };
-// 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
-$("#startBtn").click(function(){
-    // 할일과 시간을 읽어온다
-    todoInput(toLocal);
-    // 입력한 시간을 inputVal에 저장
-    var inputVal = $("#num").val();
 
-    // 타이머에 입력된 것(=inputVal)이 숫자인지 확인 
-    if(jQuery.isNumeric(inputVal)){
-        // 숫자가 맞으면 타이머를 작동
-        $("#example-timer").circletimer({
-            // 타이머 완료 후 작동하는 것
-            onComplete: function() {
-                alert("Time is up!");
-            },
-            // 타이머를 작동시키는 것?
-            onUpdate: function(elapsed) {
-                $("#time-elapsed").html(Math.round(elapsed));
-            },
-            timeout: 60000 * inputVal
-        });
-
-        // 시작 버튼
-        $("#example-timer").circletimer("start");
-
-        $("#start").on("click", function() {
-            $("#example-timer").circletimer("start");
-        });
-
-        // 일시정지 버튼
-        $("#pause").on("click", function() {
-            $("#example-timer").circletimer("pause");
-        });
-
-        // 멈춤 버튼
-        $("#stop").on("click", function() {
-            $("#example-timer").circletimer("stop");
-        });
-        
-        $("#add").on("click", function() {
-            $("#example-timer").circletimer("add", 1000);
-        });
-    } else {
-        // checkForm();
-    };
+$(function(){
+    $("#startBtn").click(function(){
+        clock();
+    });
 });
+
+// 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
+function clock(_storage){
+    // 왜 _storage를 못 찾는거임...
+    // 입력한 시간을 inputVal에 저장
+    var inputVal = $(_storage[0].time).val();
+    console.log(inputVal);
+    // 타이머에 입력된 것(=inputVal)이 숫자인지 확인 
+    $("#example-timer").circletimer({
+        // 타이머 완료 후 작동하는 것
+        onComplete: function() {
+            alert("Time is up!");
+        },
+        // 타이머를 작동시키는 것?
+        onUpdate: function(elapsed) {
+            $("#time-elapsed").html(Math.round(elapsed));
+        },
+        timeout: 60000 * inputVal
+    });
+
+    // 시작 버튼
+    $("#example-timer").circletimer("start");
+
+    $("#start").on("click", function() {
+        $("#example-timer").circletimer("start");
+    });
+
+    // 일시정지 버튼
+    $("#pause").on("click", function() {
+        $("#example-timer").circletimer("pause");
+    });
+
+    // 멈춤 버튼
+    $("#stop").on("click", function() {
+        $("#example-timer").circletimer("stop");
+    });
+
+    $("#add").on("click", function() {
+        $("#example-timer").circletimer("add", 1000);
+    });
+};
 // timer script end
