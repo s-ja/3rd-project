@@ -3,3 +3,6 @@
     margin: 20px auto;
     width: 150px;
   }
+  .setlist {
+    display: flex;
+  } 
