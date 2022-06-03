@@ -71,7 +71,6 @@ body{
   position: fixed;
   top: 30px;
   left: 30px;
-  // background: gold;
   z-index: 1000;
 }
 .logo > img{
@@ -88,7 +87,7 @@ body{
   display: none;
 }
 .input_form{
-  // display: none;
+  display: none;
   display: flex;
   flex-direction: column;
   align-items: center;
