@@ -33,8 +33,7 @@ body {
   left: 30px;
   z-index: 1000;
 }
-
-.logo > img {
+.logo img {
   width: 150px;
   height: 50px;
   object-fit: contain;
@@ -46,7 +45,6 @@ body {
   height: 100%;
   backdrop-filter: blur(5px);
   z-index: 100;
-  display: none;
 }
 
 .input_form {
@@ -61,7 +59,6 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1000;
 }
-
 .input_form input {
   width: 80%;
   background: none;
@@ -72,16 +69,13 @@ body {
   font-weight: lighter;
   text-align: center;
 }
-
 .input_form input::placeholder {
   color: #e84c3c;
   font-weight: 700;
 }
-
 .input_form input:focus {
   outline: none;
 }
-
 .input_form button {
   background: none;
   border: none;
@@ -101,6 +95,7 @@ body {
   bottom: 40px;
   overflow: hidden;
   font-size: 1.2em;
+  z-index: 1000;
 }
 
 .list_title {
@@ -122,7 +117,6 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-
 .added_works button {
   background: none;
   border: 0;
@@ -137,7 +131,6 @@ body {
   justify-content: space-between;
   font-size: 1.2em;
 }
-
 .add_todo span {
   text-transform: uppercase;
   font-weight: 900;
@@ -145,7 +138,6 @@ body {
   color: #e84c3c;
   text-indent: 5px;
 }
-
 .add_todo input {
   background: none;
   border: none;
@@ -154,20 +146,19 @@ body {
   font-weight: 100;
   font-size: 18px;
 }
-
 .add_todo input::placeholder {
   text-transform: uppercase;
   color: #e84c3c;
 }
-
 .add_todo input:focus {
   outline: none;
 }
-
-.add_todo :nth-child(3) {
-  width: 40px;
+.add_todo :nth-child(2) {
+  width: 180px;
 }
-
+.add_todo :nth-child(3) {
+  width: 50px;
+}
 .add_todo button {
   background: none;
   border: none;
@@ -180,6 +171,7 @@ body {
   right: 30px;
   bottom: 30px;
   font-size: 1.85em;
+  z-index: 1000;
 }
 
 .option_btn {
@@ -188,6 +180,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2em;
+  z-index: 1000;
 }
 
 .example {
