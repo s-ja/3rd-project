@@ -44,44 +44,61 @@ function toLocal(_todo, loadData){
 function loadData(_storage){
     var data = _storage;
     // console.log(data);
+    updateList(data);
+};
+function updateList(data){
     var htmlString = '';
-    data.each(function(todo, index){
-        for(var i=0; i<index; i++){
-            htmlString +=
-            `<li>
-                <ul class="added_works">
-                    <li>
-                        <i class="fa-solid fa-bars"></i>
-                    </li>
-                    <li>
-                        <ul class="setlist">
-                            <li>${todo.title}</li>
-                            <li>${todo.time}</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <button class="edit-bt">
-                            <span class="material-icons">border_color</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="delete-bt">
-                            <span class="material-icons">delete</span>
-                        </button>
-                    </li>
-                </ul>
-            </li>`;
-        };
+    $.each(data, function (index, todo){
+        // console.log(todo, index);
+        htmlString +=
+        `<li>
+            <ul class="added_works list${index}">
+                <li>
+                    <i class="fa-solid fa-bars"></i>
+                </li>
+                <li>
+                    <ul class="setlist">
+                        <li>${todo.title}</li>
+                        <li>${todo.time}</li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="edit-bt">
+                        <span class="material-icons">border_color</span>
+                    </button>
+                </li>
+                <li>
+                    <button class="delete-bt">
+                        <span class="material-icons">delete</span>
+                    </button>
+                </li>
+            </ul>
+        </li>`;
     });
     $(".added_list").html(htmlString);
-};
-
+}
 $(function(){
     $("#startBtn").click(function(){
         clock();
     });
+    $(".delete-bt").on("click",function(){
+        var tg = $(this);
+        console.log($(".delete-bt").index(tg));
+        var STORAGE = loadCurrentData()
+        console.log([STORAGE]);
+        var indexTg = $(".delete-bt").index(tg);
+        console.log(indexTg);
+        STORAGE.splice(indexTg, 1);
+        
+        localStorage.clear();
+        localStorage.setItem("todoItem", JSON.stringify(STORAGE));
+        updateList(STORAGE);
+    })
 });
-
+function loadCurrentData(){
+    var _storage = JSON.parse(localStorage.getItem("todoItem"));
+    return _storage;
+}
 // 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
 function clock(_storage){
     // 왜 _storage를 못 찾는거임...
