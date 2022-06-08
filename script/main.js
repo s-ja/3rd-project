@@ -12,6 +12,22 @@ $(function(){
     $("#inputBtn").click(function(){
         todoInput(toLocal);
     });
+
+    console.log($(".delete-bt").length);
+    $(".delete-bt").on({
+        click: function(e){
+            console.dir(e);
+            var tg = $(this);
+            var STORAGE = loadCurrentData()
+            var indexTg = $(".delete-bt").index(tg);
+            STORAGE.splice(indexTg, 1);
+            // localStorage.clear();
+            localStorage.setItem("todoItem", JSON.stringify(STORAGE));
+            todos = STORAGE;
+            updateList(STORAGE);
+        }
+    })
+
 });
 function checkForm(){
     if($("#todoText").val() === "") {
@@ -35,6 +51,7 @@ function todoInput(toLocal){
     clearInput();
     todos.push(_todo);
     toLocal(todos, loadData);
+    return todos;
 };
 function toLocal(_todo, loadData){
     localStorage.setItem("todoItem", JSON.stringify(_todo));
@@ -81,19 +98,7 @@ $(function(){
     $("#startBtn").click(function(){
         clock();
     });
-    $(".delete-bt").on("click",function(){
-        var tg = $(this);
-        console.log($(".delete-bt").index(tg));
-        var STORAGE = loadCurrentData()
-        console.log([STORAGE]);
-        var indexTg = $(".delete-bt").index(tg);
-        console.log(indexTg);
-        STORAGE.splice(indexTg, 1);
-        
-        localStorage.clear();
-        localStorage.setItem("todoItem", JSON.stringify(STORAGE));
-        updateList(STORAGE);
-    })
+   
 });
 function loadCurrentData(){
     var _storage = JSON.parse(localStorage.getItem("todoItem"));
@@ -101,11 +106,8 @@ function loadCurrentData(){
 }
 // 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
 function clock(_storage){
-    // 왜 _storage를 못 찾는거임...
     // 입력한 시간을 inputVal에 저장
     var inputVal = $(_storage[0].time).val();
-    console.log(inputVal);
-    // 타이머에 입력된 것(=inputVal)이 숫자인지 확인 
     $("#example-timer").circletimer({
         // 타이머 완료 후 작동하는 것
         onComplete: function() {
