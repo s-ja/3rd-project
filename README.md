@@ -82,6 +82,7 @@
 
 # 10th day(22/06/08)
 - 사이드 프로젝트 1차 마감후 checky 재시동
+- https://github.com/abejfehr/circletimer 및 기존 js코드 분석
 - 현 시점 입력값 localstorage로 저장하는 단계까지 구현
 - localstorage에서 값 찾아서 타이머 작동하게 하는 기능 구현 필요
 - class="blur" : 블러 작동 방식 수정 필요ㅇ
