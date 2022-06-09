@@ -71,24 +71,26 @@ body{
   position: fixed;
   top: 30px;
   left: 30px;
-  // background: gold;
   z-index: 1000;
-}
-.logo > img{
-  width: 150px;
+  img{
+    width: 150px;
   height: 50px;
   object-fit: contain;
+  }
 }
-.blur{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(5px);
-  z-index: 100;
-  display: none;
+.effect_on{
+  .blur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    // z-index: 1;
+    // display: none;
+  }
 }
+
 .input_form{
-  // display: none;
+  display: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,31 +99,31 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  z-index: 1000;
-}
-.input_form input{
-  width: 80%;
-  // height: 3em;
-  background: none;
-  border: 0;
-  border-bottom: 2px solid #e84c3c;
-  color: #f2f2f2;
-  font-size: 2em;
-  font-weight: lighter;
-  text-align: center;
-}
-.input_form input::placeholder{
-  color: #e84c3c;
-  font-weight: 700;
-}
-.input_form input:focus{
-  outline: none;
-}
-.input_form button{
-  background: none;
-  border: none;
-  color: #e84c3c;
-  font-size: 2rem;
+  // z-index: 1000;
+  input{
+    width: 80%;
+    // height: 3em;
+    background: none;
+    border: 0;
+    border-bottom: 2px solid #e84c3c;
+    color: #f2f2f2;
+    font-size: 2em;
+    font-weight: lighter;
+    text-align: center;
+    &::placeholder{
+      color: #e84c3c;
+      font-weight: 700;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
+  button{
+    background: none;
+    border: none;
+    color: #e84c3c;
+    font-size: 2rem;
+  }
 }
 .quote{
   text-align: center;
@@ -135,6 +137,7 @@ body{
   bottom: 40px;
   overflow: hidden;
   font-size: 1.2em;
+  // z-index: 1000;
 }
 .list_title{
   font-weight: 900;
@@ -152,12 +155,12 @@ body{
   column-gap: 10px;
   align-items: center;
   justify-content: space-between;
-}
-.added_works button{
-  background: none;
-  border: 0;
-  color: #f2f2f2;
-  padding: 0;
+  button{
+    background: none;
+    border: 0;
+    color: #f2f2f2;
+    padding: 0;
+  }
 }
 .add_todo{
   display: flex;
@@ -165,47 +168,47 @@ body{
   align-items: center;
   justify-content: space-between;
   font-size: 1.2em;
+  span{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: .5em;
+    color: #e84c3c;
+    text-indent: 5px;
+  }
+  input{
+    background: none;
+    border: none;
+    color: #f2f2f2;
+    border-bottom: 2px solid #e84c3c;
+    font-weight: 100;
+    font-size: 18px;
+  }
+  input::placeholder{
+    text-transform: uppercase;
+    color: #e84c3c;
+  }
+  input:focus{
+    outline: none;
+  }
+  :nth-child(2){
+    width: 180px;
+  }
+  :nth-child(3){
+    width: 50px;
+  }
+  button{
+    background: none;
+    border: none;
+    color: #e84c3c;
+    font-size: 1.25em;
+  }
 }
-.add_todo span{
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: .5em;
-  color: #e84c3c;
-  text-indent: 5px;
-}
-.add_todo input{
-  background: none;
-  border: none;
-  color: #f2f2f2;
-  border-bottom: 2px solid #e84c3c;
-  font-weight: 100;
-  font-size: 18px;
-}
-.add_todo input::placeholder{
-  text-transform: uppercase;
-  color: #e84c3c;
-}
-.add_todo input:focus{
-  outline: none;
-}
-.add_todo :nth-child(2){
-  // width: 180px;
-}
-.add_todo :nth-child(3){
-  width: 40px;
-}
-.add_todo button{
-  background: none;
-  border: none;
-  color: #e84c3c;
-  font-size: 1.25em;
-}
-
 .theme_btn{
   position: fixed;
   right: 30px;
   bottom: 30px;
   font-size: 1.85em;
+  // z-index: 1000;
 }
 .option_btn{
   position: fixed;
@@ -213,6 +216,7 @@ body{
   left: 50%;
   transform: translate(-50%,-50%);
   font-size: 2em;
+  // z-index: 1000;
 }
 
 .example{
@@ -220,6 +224,8 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  // background: #bf0504;
+  // border-radius: 50%;
 }
 #example-timer{
   width: 500px;

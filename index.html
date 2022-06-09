@@ -25,25 +25,15 @@
             <img src="./images/logo_dark.png" alt="logo">
         </a>
     </div>
-    <div class="landing">
-        <div class="blur"></div>
-        <div class="input_form">
-            <h2 class="quote">
-                There is no ‘Right’ Time<br>
-                Just Time<br>
-                And what you do with it
-            </h2>
-            <input type="text" id="todoText" name="todoText" placeholder="NAME">
-            <input type="text" id="num" minlength="1" maxlength="2" name="todoTime" placeholder="MIMUTES">
-            <button id="inputBtn">
-                <i class="fa-solid fa-square-plus"></i>
-            </button>
-            <button id="startBtn">
-                <i class="fa-solid fa-play"></i>
-            </button>
-        </div>
+
+    <div class="example">
+        <div id="example-timer"></div>
+        <div id="ct-circle-container"></div>
+        <!-- <p>Time Elapsed: <span id="time-elapsed">0</span>ms</p> -->
+        <!-- <button id="inputBtn">start</button> -->
     </div>
-    <div id="list-window" class="manipulation">
+
+    <div id="list-window" class="manipulation effect_off">
         <div class="blur"></div>
         <div class="todo_list">
             <h2 class="list_title">Works To Do</h2>
@@ -55,8 +45,8 @@
                         </li>
                         <li>
                             <ul class="setlist">
-                                <li>Jobs to be Done</li>
-                                <li>setted time</li>
+                                <li></li>
+                                <li></li>
                             </ul>
                         </li>
                         <li>
@@ -76,7 +66,7 @@
                 <span>add</span>
                 <input id="todoText" type="text" placeholder="name">
                 <input id="num" type="text" placeholder="time">
-                <button>
+                <button id="inputBtn">
                 <i class="fa-solid fa-square-plus"></i>
                 </button>
             </div>
@@ -92,13 +82,25 @@
             <i class="fa-solid fa-palette"></i>
         </div>
     </div>
-    <div class="example">
-        <div id="example-timer"></div>
-        <div id="ct-circle-container"></div>
-        <!-- <p>Time Elapsed: <span id="time-elapsed">0</span>ms</p> -->
-        <!-- <button id="inputBtn">start</button> -->
-    </div>
 
+    <div class="landing effect_off">
+        <div class="blur"></div>
+        <div class="input_form">
+            <h2 class="quote">
+                There is no ‘Right’ Time<br>
+                Just Time<br>
+                And what you do with it
+            </h2>
+            <input type="text" id="todoText" name="todoText" placeholder="NAME">
+            <input type="text" id="num" name="todoTime" placeholder="TIME">
+            <button id="inputBtn">
+                <i class="fa-solid fa-square-plus"></i>
+            </button>
+            <button id="startBtn">
+                <i class="fa-solid fa-play"></i>
+            </button>
+        </div>
+    </div>
     <script src="./script/main.js"></script>
     <script>
         
