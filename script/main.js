@@ -2,9 +2,8 @@ var todos = [];
     // timer script
 $(function(){
     var itemCheck = localStorage.getItem("todoItem");
-    if (itemCheck == null){
-        localStorage.setItem("todoItem", []);
-    } else {
+    // console.log(itemCheck);
+    if (itemCheck !== null){
         var _storage = JSON.parse(localStorage.getItem("todoItem"));
         loadData(_storage);
         todos = _storage;
