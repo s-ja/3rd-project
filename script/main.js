@@ -24,6 +24,8 @@ $(function(){
         updateList(STORAGE);
     });
 });
+
+// 할일과 시간의 입력창이 비어있을 경우 경고 호출
 function checkForm(){
     if($("#todoText").val() === "") {
         alert("할일을 입력하세요");
@@ -36,6 +38,8 @@ function checkForm(){
         return false;
     }
 }
+
+
 function clearInput(){
     $("#todoText").val(null);
     $("#num").val(null);
@@ -58,6 +62,8 @@ function loadData(_storage){
     // console.log(data);
     updateList(data);
 };
+
+// 입력한 할일과 시간을 works to do 에 입력(갱신)
 function updateList(data){
     var htmlString = '';
     $.each(data, function (index, todo){
@@ -105,11 +111,11 @@ function clock(_storage){
     console.log(_storage);
 
     $("#example-timer").circletimer({
-        // 타이머 완료 후 작동하는 것
+        // 타이머 완료 후 (원이 완전히 없어졌을 때) 작동하는 것
         onComplete: function() {
             alert("Time is up!");
         },
-        // 타이머를 작동시키는 것?
+        // 남은 원의 면적을 측정하여 남은 시간을 표시
         onUpdate: function(elapsed) {
             $("#time-elapsed").html(Math.round(elapsed));
         },
