@@ -13,22 +13,16 @@ $(function(){
         todoInput(toLocal);
     });
 
-    // Works to do 목록에서 할일과 시간 삭제하는 기능
-    console.log($(".delete-bt").length);
-    $(".delete-bt").on({
-        click: function(e){
-            console.dir(e);
-            var tg = $(this);
-            var STORAGE = loadCurrentData()
-            var indexTg = $(".delete-bt").index(tg);
-            STORAGE.splice(indexTg, 1);
-            // localStorage.clear();
-            localStorage.setItem("todoItem", JSON.stringify(STORAGE));
-            todos = STORAGE;
-            updateList(STORAGE);
-        }
-    })
-
+    $(document).on("click", ".delete-bt", function(){
+        var tg = $(this);
+        var STORAGE = loadCurrentData()
+        var indexTg = $(".delete-bt").index(tg);
+        STORAGE.splice(indexTg, 1);
+        // localStorage.clear();
+        localStorage.setItem("todoItem", JSON.stringify(STORAGE));
+        todos = STORAGE;
+        updateList(STORAGE);
+    });
 });
 
 // 할일과 시간의 입력창이 비어있을 경우 경고 호출
@@ -103,7 +97,9 @@ function updateList(data){
 }
 $(function(){
     $("#startBtn").click(function(){
-        clock();
+        var todos = loadCurrentData();
+        var todo1st = Number(todos[0].time)
+        clock(todo1st);
     });
    
 });
@@ -111,10 +107,9 @@ function loadCurrentData(){
     var _storage = JSON.parse(localStorage.getItem("todoItem"));
     return _storage;
 }
-// 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
 function clock(_storage){
-    // 입력한 시간을 inputVal에 저장
-    var inputVal = $(_storage[0].time).val();
+    console.log(_storage);
+
     $("#example-timer").circletimer({
         // 타이머 완료 후 (원이 완전히 없어졌을 때) 작동하는 것
         onComplete: function() {
@@ -124,7 +119,7 @@ function clock(_storage){
         onUpdate: function(elapsed) {
             $("#time-elapsed").html(Math.round(elapsed));
         },
-        timeout: 60000 * inputVal
+        timeout: 60000 * _storage
     });
 
     // 시작 버튼
