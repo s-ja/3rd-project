@@ -13,21 +13,16 @@ $(function(){
         todoInput(toLocal);
     });
 
-    console.log($(".delete-bt").length);
-    $(".delete-bt").on({
-        click: function(e){
-            console.dir(e);
-            var tg = $(this);
-            var STORAGE = loadCurrentData()
-            var indexTg = $(".delete-bt").index(tg);
-            STORAGE.splice(indexTg, 1);
-            // localStorage.clear();
-            localStorage.setItem("todoItem", JSON.stringify(STORAGE));
-            todos = STORAGE;
-            updateList(STORAGE);
-        }
-    })
-
+    $(document).on("click", ".delete-bt", function(){
+        var tg = $(this);
+        var STORAGE = loadCurrentData()
+        var indexTg = $(".delete-bt").index(tg);
+        STORAGE.splice(indexTg, 1);
+        // localStorage.clear();
+        localStorage.setItem("todoItem", JSON.stringify(STORAGE));
+        todos = STORAGE;
+        updateList(STORAGE);
+    });
 });
 function checkForm(){
     if($("#todoText").val() === "") {
