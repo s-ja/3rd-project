@@ -91,7 +91,9 @@ function updateList(data){
 }
 $(function(){
     $("#startBtn").click(function(){
-        clock();
+        var todos = loadCurrentData();
+        var todo1st = Number(todos[0].time)
+        clock(todo1st);
     });
    
 });
@@ -99,10 +101,9 @@ function loadCurrentData(){
     var _storage = JSON.parse(localStorage.getItem("todoItem"));
     return _storage;
 }
-// 타이머 시작 버튼을 누르기 전까진 타이머 관련 함수는 동작하면 안 됨
 function clock(_storage){
-    // 입력한 시간을 inputVal에 저장
-    var inputVal = $(_storage[0].time).val();
+    console.log(_storage);
+
     $("#example-timer").circletimer({
         // 타이머 완료 후 작동하는 것
         onComplete: function() {
@@ -112,7 +113,7 @@ function clock(_storage){
         onUpdate: function(elapsed) {
             $("#time-elapsed").html(Math.round(elapsed));
         },
-        timeout: 60000 * inputVal
+        timeout: 60000 * _storage
     });
 
     // 시작 버튼
