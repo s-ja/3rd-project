@@ -78,15 +78,17 @@ body{
   object-fit: contain;
   }
 }
-
-.blur{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(5px);
-  z-index: 100;
-  // display: none;
+.effect_on{
+  .blur{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    // z-index: 1;
+    // display: none;
+  }
 }
+
 .input_form{
   display: none;
   display: flex;
@@ -97,7 +99,7 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  z-index: 1000;
+  // z-index: 1000;
   input{
     width: 80%;
     // height: 3em;
@@ -135,7 +137,7 @@ body{
   bottom: 40px;
   overflow: hidden;
   font-size: 1.2em;
-  z-index: 1000;
+  // z-index: 1000;
 }
 .list_title{
   font-weight: 900;
@@ -206,7 +208,7 @@ body{
   right: 30px;
   bottom: 30px;
   font-size: 1.85em;
-  z-index: 1000;
+  // z-index: 1000;
 }
 .option_btn{
   position: fixed;
@@ -214,7 +216,7 @@ body{
   left: 50%;
   transform: translate(-50%,-50%);
   font-size: 2em;
-  z-index: 1000;
+  // z-index: 1000;
 }
 
 .example{
@@ -222,6 +224,8 @@ body{
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+  // background: #bf0504;
+  // border-radius: 50%;
 }
 #example-timer{
   width: 500px;

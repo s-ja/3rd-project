@@ -39,12 +39,11 @@ body {
   object-fit: contain;
 }
 
-.blur {
+.effect_on .blur {
   position: absolute;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px);
-  z-index: 100;
 }
 
 .input_form {
@@ -57,7 +56,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
 }
 .input_form input {
   width: 80%;
@@ -95,7 +93,6 @@ body {
   bottom: 40px;
   overflow: hidden;
   font-size: 1.2em;
-  z-index: 1000;
 }
 
 .list_title {
@@ -171,7 +168,6 @@ body {
   right: 30px;
   bottom: 30px;
   font-size: 1.85em;
-  z-index: 1000;
 }
 
 .option_btn {
@@ -180,7 +176,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2em;
-  z-index: 1000;
 }
 
 .example {
