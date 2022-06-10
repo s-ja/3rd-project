@@ -56,6 +56,13 @@ $colors:(
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
 
 .d_none{
   display: none;
@@ -151,15 +158,27 @@ body{
   margin-bottom: 10px;
 }
 .added_works{
+  background: slategray;
   display: flex;
-  column-gap: 10px;
+  // column-gap: 10px;
   align-items: center;
   justify-content: space-between;
   button{
     background: none;
-    border: 0;
     color: #f2f2f2;
+    border: 1px solid;
+    margin: 0;
     padding: 0;
+    object-fit: cover;
+  }
+  .setlist{
+    li{
+      padding: 0 20px;
+      margin: 0 20px;
+      border: 1px solid #40040E;
+      background: rebeccapurple;
+      text-align: center;
+    }
   }
 }
 .add_todo{
