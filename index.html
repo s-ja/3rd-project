@@ -37,7 +37,7 @@
 
     <div id="list-window" class="manipulation effect_off">
         <div class="blur"></div>
-        <div class="todo_list">
+        <div class="todo_list d-none">
             <h2 class="list_title">Works To Do</h2>
             <ul class="added_list">
                 <li>
@@ -47,18 +47,18 @@
                         </li>
                         <li>
                             <ul class="setlist">
-                                <li></li>
-                                <li></li>
+                                <li>TODO</li>
+                                <li>MIN</li>
                             </ul>
                         </li>
                         <li>
                             <button class="edit-bt">
-                                <span class="material-icons md48">delete</span>
+                                <span class="material-icons md-24">edit</span>
                             </button>
                         </li>
                         <li>
                             <button class="delete-bt">
-                                <span class="material-symbols-outlined">delete</span>
+                                <span class="material-icons md-24">delete</span>
                             </button>
                         </li>
                     </ul>
@@ -67,9 +67,12 @@
             <div class="add_todo">
                 <span>add</span>
                 <input id="todoText" type="text" placeholder="name">
-                <input id="num" type="text" placeholder="MIN">
+                <input id="num" type="text" placeholder="MIMUTES">
                 <button id="inputBtn">
                 <i class="fa-solid fa-square-plus"></i>
+                </button>
+                <button id="startBtn">
+                    <i class="fa-solid fa-play"></i>
                 </button>
             </div>
         </div>
@@ -94,12 +97,14 @@
                 And what you do with it
             </h2>
             <input type="text" id="todoText" name="todoText" placeholder="NAME">
+<<<<<<< HEAD
             <input type="text" id="num" name="todoTime" placeholder="MINUTE">
             <button id="inputBtn">
+=======
+            <input type="text" id="num" name="todoTime" placeholder="MIMUTES">
+            <button id="landingBtn">
+>>>>>>> 85b6dfc0444ac1702a0c3c6aa14486bd37b3cb28
                 <i class="fa-solid fa-square-plus"></i>
-            </button>
-            <button id="startBtn">
-                <i class="fa-solid fa-play"></i>
             </button>
         </div>
     </div>
