@@ -95,12 +95,12 @@ function updateList(data){
                 </li>
                 <li>
                     <button class="edit-bt">
-                        <span class="material-icons">border_color</span>
+                    <span class="material-icons md-24">edit</span>
                     </button>
                 </li>
                 <li>
                     <button class="delete-bt">
-                        <span class="material-icons">delete</span>
+                        <span class="material-icons md-24">delete</span>
                     </button>
                 </li>
             </ul>
