@@ -85,6 +85,7 @@ body{
   object-fit: contain;
   }
 }
+// 타이머 원 위에 블러 입히기 위한 스타일
 .effect_on{
   .blur{
     position: absolute;
@@ -103,10 +104,9 @@ body{
   align-items: center;
   row-gap: 10px;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  // z-index: 1000;
+  bottom: 40px;
+  right: 40px;
+  // transform: translate(-50%,-50%);
   input{
     width: 80%;
     // height: 3em;
@@ -116,7 +116,7 @@ body{
     color: #f2f2f2;
     font-size: 2em;
     font-weight: lighter;
-    text-align: center;
+    // text-align: center;
     &::placeholder{
       color: #e84c3c;
       font-weight: 700;
@@ -125,19 +125,22 @@ body{
       outline: none;
     }
   }
-  button{
+}
+.main_button{
     background: none;
     border: none;
     color: #e84c3c;
     font-size: 2rem;
-  }
 }
+
+// 시간관련 문구 및 명언 표시스타일 - 유지보수를 위해 남겨둠
 .quote{
   text-align: center;
   font-weight: 100;
   font-size: 2.5rem;
 }
 
+// 돌아가고 있는 타이머의 할일 이름과 입력된 시간(분)
 .list-output{
   position: fixed;
   top: 150px;
@@ -164,12 +167,18 @@ body{
 }
 
 
+// 추가된 할일들의 목록
 .todo_list{
   position: fixed;
   left: 40px;
   bottom: 40px;
   overflow: hidden;
   font-size: 1.2em;
+}
+.list_title_wrap{
+  display: flex;
+  justify-content: space-between;
+  // margin-bottom: 20px;
 }
 .list_title{
   font-weight: 900;
@@ -179,26 +188,38 @@ body{
 .added_list{
   width: 350px;
   height: 280px;
-  border-bottom: 2px solid #e84c3c;
-  margin-bottom: 10px;
+  overflow-y: scroll;
+  // &:hover{
+  //   overflow-y: scroll;
+  // }
+  &::-webkit-scrollbar{
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background: #e84c3c;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  &::-webkit-scrollbar-track{
+    background: #4F5951;
+    border-radius: 10px;
+  }
 }
 .added_works{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   >li{
     &:nth-child(1){
-      flex: 1;
-    }
-    &:nth-child(2){
       flex: 10;
     }
-    &:nth-child(3){
-       flex: 1;
-    }
-    &:nth-child(4){
+    &:nth-child(2){
       flex: 1;
     }
   }
+
+  // 삭제버튼 - 기존 수정 및 삭제 버튼
   button{
     background: none;
     color: #f2f2f2;
@@ -206,6 +227,7 @@ body{
     margin: 0;
     padding: 0;
   }
+  // 입력된 할일의 이름과 시간 표시 항목
   .setlist{
     display: flex;
     li{
@@ -214,6 +236,8 @@ body{
     }
   }
 }
+
+// 할일의 리스트 밑에 있었던 추가기능 항목 - 유지보수를 위해 남겨둠
 .add_todo{
   display: flex;
   column-gap: 10px;
@@ -255,6 +279,7 @@ body{
     font-size: 1.25em;
   }
 }
+// 테마(컬러웨이) 변경 기능을 위한 버튼 - 유지보수를 위해 남겨둠
 .theme_btn{
   position: fixed;
   right: 30px;
@@ -262,6 +287,7 @@ body{
   font-size: 1.85em;
   // z-index: 1000;
 }
+// 옵션버튼
 .option_btn{
   position: fixed;
   bottom: 10px;
@@ -270,7 +296,9 @@ body{
   font-size: 2em;
   // z-index: 1000;
 }
+// ----------------------------------------
 
+// 메인 타이머 스타일링
 .example{
   position: fixed;
   top: 50%;
@@ -298,3 +326,4 @@ body{
     }
   }
 }
+// ----------------------------------------

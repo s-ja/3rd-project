@@ -85,18 +85,10 @@ function updateList(data){
         `<li>
             <ul class="added_works list${index}">
                 <li>
-                    <i class="fa-solid fa-bars"></i>
-                </li>
-                <li>
                     <ul class="setlist">
                         <li>${todo.title}</li>
                         <li>${todo.time}</li>
                     </ul>
-                </li>
-                <li>
-                    <button class="edit-bt">
-                    <span class="material-icons md-24">edit</span>
-                    </button>
                 </li>
                 <li>
                     <button class="delete-bt">
