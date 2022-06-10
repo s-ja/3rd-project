@@ -9,9 +9,16 @@ $(function(){
         todos = _storage;
     };
     $("#inputBtn").click(function(){
+        checkForm();
         todoInput(toLocal);
     });
-
+    $("#landingBtn").click(function(){
+        checkForm();
+        todoInput(toLocal);
+        var todos = loadCurrentData();
+        var todo1st = Number(todos[0].time)
+        clock(todo1st);
+    })
     $(document).on("click", ".delete-bt", function(){
         var tg = $(this);
         var STORAGE = loadCurrentData()
@@ -46,6 +53,7 @@ function clearInput(){
 };
 function todoInput(toLocal){
     var _todo = {title: $("#todoText").val(), time: $("#num").val()};
+    console.log(_todo);
     clearInput();
     todos.push(_todo);
     toLocal(todos, loadData);
