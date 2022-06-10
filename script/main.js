@@ -7,11 +7,22 @@ $(function(){
         var _storage = JSON.parse(localStorage.getItem("todoItem"));
         loadData(_storage);
         todos = _storage;
+        $(".landing").addClass("d-none");
+        $(".todo_list").removeClass("d-none");
     };
     $("#inputBtn").click(function(){
+        checkForm();
         todoInput(toLocal);
     });
-
+    $("#landingBtn").click(function(){
+        checkForm();
+        todoInput(toLocal);
+        var todos = loadCurrentData();
+        var todo1st = Number(todos[0].time)
+        clock(todo1st);
+        $(".landing").removeClass("d-none");
+        $(".todo_list").addClass("d-none");
+    })
     $(document).on("click", ".delete-bt", function(){
         var tg = $(this);
         var STORAGE = loadCurrentData()
@@ -46,6 +57,7 @@ function clearInput(){
 };
 function todoInput(toLocal){
     var _todo = {title: $("#todoText").val(), time: $("#num").val()};
+    console.log(_todo);
     clearInput();
     todos.push(_todo);
     toLocal(todos, loadData);
@@ -107,7 +119,7 @@ function loadCurrentData(){
     var _storage = JSON.parse(localStorage.getItem("todoItem"));
     return _storage;
 }
-function listOutput(){
+function listOutput(todos){
     var todoTitle = todos[0].title
     var todoTime = todos[0].time
     var titleAndTime = ''
