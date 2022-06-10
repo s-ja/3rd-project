@@ -107,12 +107,24 @@ $(function(){
         var todos = loadCurrentData();
         var todo1st = Number(todos[0].time)
         clock(todo1st);
+        listOutput(todos);
     });
    
 });
 function loadCurrentData(){
     var _storage = JSON.parse(localStorage.getItem("todoItem"));
     return _storage;
+}
+function listOutput(){
+    var todoTitle = todos[0].title
+    var todoTime = todos[0].time
+    var titleAndTime = ''
+    titleAndTime += 
+        `<ul>
+            <li>${todoTitle}</li>
+            <li>${todoTime}</li>
+        </ul>`;
+    $(".list-output").html(titleAndTime);
 }
 function clock(_storage){
     console.log(_storage);
