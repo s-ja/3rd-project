@@ -7,24 +7,24 @@ $(function(){
         var _storage = JSON.parse(localStorage.getItem("todoItem"));
         loadData(_storage);
         todos = _storage;
-        $("#landingBtn").addClass("d-none");
-        $("#inputBtn, #startBtn").removeClass("d-none");
+        // $("#landingBtn").addClass("d-none");
+        // $("#inputBtn, #startBtn").removeClass("d-none");
     };
     $("#inputBtn").click(function(){
         checkForm();
         todoInput(toLocal);
     });
-    $("#landingBtn").click(function(){
-        checkForm();
-        todoInput(toLocal);
-        $("#landingBtn").addClass("d-none");
-        $("#inputBtn, #startBtn").removeClass("d-none");
-        $(".quote").addClass("d-none");
-        var todos = loadCurrentData();
-        var todo1st = Number(todos[0].time);
-        listOutput(todos);
-        clock(todo1st);
-    })
+    // $("#landingBtn").click(function(){
+    //     checkForm();
+    //     todoInput(toLocal);
+    //     $("#landingBtn").addClass("d-none");
+    //     $("#inputBtn, #startBtn").removeClass("d-none");
+    //     $(".quote").addClass("d-none");
+    //     var todos = loadCurrentData();
+    //     var todo1st = Number(todos[0].time);
+    //     listOutput(todos);
+    //     clock(todo1st);
+    // })
     $(document).on("click", ".delete-bt", function(){
         var tg = $(this);
         var STORAGE = loadCurrentData()
@@ -36,7 +36,6 @@ $(function(){
         updateList(STORAGE);
     });
 });
-
 // 할일과 시간의 입력창이 비어있을 경우 경고 호출
 function checkForm(){
     if($("#todoText").val() === "") {
@@ -50,8 +49,6 @@ function checkForm(){
         return false;
     }
 }
-
-
 function clearInput(){
     $("#todoText").val(null);
     $("#num").val(null);
@@ -75,7 +72,6 @@ function loadData(_storage){
     // console.log(data);
     updateList(data);
 };
-
 // 입력한 할일과 시간을 works to do 에 입력(갱신)
 function updateList(data){
     var htmlString = '';
@@ -104,9 +100,9 @@ $(function(){
     $("#startBtn").click(function(){
         var todos = loadCurrentData();
         var todo1st = Number(todos[0].time)
-        $(".quote").addClass("d-none");
+        $(".quote").addClass("d_none");
         clock(todo1st);
-        console.log(todo1st);
+        // console.log(todo1st);
         listOutput(todos);
         return todos;
     });
@@ -135,12 +131,10 @@ function clock(todo1st){
         onComplete: function() {
             var currentTodo = JSON.parse(localStorage.getItem("todoItem"));
             currentTodo.shift();
-            console.log(currentTodo);
-            
-            // toLocal(_storage);
-            // loadCurrentData(_storage);
-            // listOutput(todos);
-            // clock(todo1st);
+            localStorage.setItem("todoItem", JSON.stringify(currentTodo));
+            listOutput(currentTodo);
+            updateList(currentTodo);
+            $("#startBtn").click();
         },
         // 남은 원의 면적을 측정하여 남은 시간을 표시
         onUpdate: function(elapsed) {
