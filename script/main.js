@@ -7,8 +7,8 @@ $(function(){
         var _storage = JSON.parse(localStorage.getItem("todoItem"));
         loadData(_storage);
         todos = _storage;
-        $(".landing").addClass("d-none");
-        $(".todo_list").removeClass("d-none");
+        $("#landingBtn").addClass("d-none");
+        $("#inputBtn, #startBtn").removeClass("d-none");
     };
     $("#inputBtn").click(function(){
         checkForm();
@@ -17,11 +17,13 @@ $(function(){
     $("#landingBtn").click(function(){
         checkForm();
         todoInput(toLocal);
+        $("#landingBtn").addClass("d-none");
+        $("#inputBtn, #startBtn").removeClass("d-none");
+        $(".quote").addClass("d-none");
         var todos = loadCurrentData();
-        var todo1st = Number(todos[0].time)
+        var todo1st = Number(todos[0].time);
+        listOutput(todos);
         clock(todo1st);
-        $(".landing").removeClass("d-none");
-        $(".todo_list").addClass("d-none");
     })
     $(document).on("click", ".delete-bt", function(){
         var tg = $(this);
@@ -110,8 +112,10 @@ $(function(){
     $("#startBtn").click(function(){
         var todos = loadCurrentData();
         var todo1st = Number(todos[0].time)
+        $(".quote").addClass("d-none");
         clock(todo1st);
         listOutput(todos);
+        return todos;
     });
    
 });
@@ -129,14 +133,21 @@ function listOutput(todos){
             <li>${todoTime}</li>
         </ul>`;
     $(".list-output").html(titleAndTime);
+    // console.log(titleAndTime);
 }
 function clock(_storage){
-    console.log(_storage);
+    // console.log(_storage);
 
     $("#example-timer").circletimer({
         // 타이머 완료 후 (원이 완전히 없어졌을 때) 작동하는 것
-        onComplete: function() {
-            alert("Time is up!");
+        onComplete: function(_storage) {
+            console.log(typeof _storage);
+            _storage.shift();
+            console.log(_storage);
+            toLocal(_storage);
+            loadCurrentData(_storage);
+            listOutput(todos);
+            clock(todo1st);
         },
         // 남은 원의 면적을 측정하여 남은 시간을 표시
         onUpdate: function(elapsed) {
