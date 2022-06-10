@@ -114,6 +114,7 @@ $(function(){
         var todo1st = Number(todos[0].time)
         $(".quote").addClass("d-none");
         clock(todo1st);
+        console.log(todo1st);
         listOutput(todos);
         return todos;
     });
@@ -135,25 +136,25 @@ function listOutput(todos){
     $(".list-output").html(titleAndTime);
     // console.log(titleAndTime);
 }
-function clock(_storage){
+function clock(todo1st){
     // console.log(_storage);
-
     $("#example-timer").circletimer({
         // 타이머 완료 후 (원이 완전히 없어졌을 때) 작동하는 것
-        onComplete: function(_storage) {
-            console.log(typeof _storage);
-            _storage.shift();
-            console.log(_storage);
-            toLocal(_storage);
-            loadCurrentData(_storage);
-            listOutput(todos);
-            clock(todo1st);
+        onComplete: function() {
+            var currentTodo = JSON.parse(localStorage.getItem("todoItem"));
+            currentTodo.shift();
+            console.log(currentTodo);
+            
+            // toLocal(_storage);
+            // loadCurrentData(_storage);
+            // listOutput(todos);
+            // clock(todo1st);
         },
         // 남은 원의 면적을 측정하여 남은 시간을 표시
         onUpdate: function(elapsed) {
             $("#time-elapsed").html(Math.round(elapsed));
         },
-        timeout: 60000 * _storage
+        timeout: 60000 * todo1st
     });
 
     // 시작 버튼
