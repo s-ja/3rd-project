@@ -38,14 +38,19 @@
     <div id="list-window" class="manipulation effect_off">
         <div class="blur"></div>
         <div class="todo_list">
-            <h2 class="list_title">Works To Do</h2>
+            <div class="list_title_wrap">
+                <h2 class="list_title">Works To Do</h2>
+                <button id="startBtn" class="main_button">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
             <ul class="added_list">
                 <li>
                     <ul class="added_works">
                         <li>
                             <ul class="setlist">
-                                <li>TODO</li>
-                                <li>MIN</li>
+                                <li></li>
+                                <li></li>
                             </ul>
                         </li>
                         <li>
@@ -64,30 +69,33 @@
                 keyboard_option_key
             </span>
         </div>
-        <div id="theme-icon" class="theme_btn">
+        <!-- <div id="theme-icon" class="theme_btn">
             <i class="fa-solid fa-palette"></i>
-        </div>
+        </div> -->
     </div>
 
     <div class="landing effect_off">
         <div class="blur"></div>
         <div class="input_form">
-            <h2 class="quote">
+            <!-- <h2 class="quote">
                 There is no ‘Right’ Time<br>
                 Just Time<br>
                 And what you do with it
-            </h2>
+            </h2> -->
             <input type="text" id="todoText" name="todoText" placeholder="NAME">
             <input type="text" id="num" name="todoTime" placeholder="MINUTES">
-            <!-- <button id="landingBtn">
-                <i class="fa-solid fa-circle-play"></i>
-            </button> -->
-            <button id="inputBtn">
+
+            <button id="inputBtn" class="main_button">
                 <i class="fa-solid fa-square-plus"></i>
             </button>
-            <button id="startBtn">
+            
+            <!-- <button id="landingBtn" style="display:block;">
+                <i class="fa-solid fa-circle-play"></i>
+            </button> -->
+            <!-- <button id="startBtn" class="main_button">
+
                 <i class="fa-solid fa-play"></i>
-            </button>
+            </button> -->
         </div>
     </div>
     <script src="./script/main.js"></script>
