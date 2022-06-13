@@ -122,7 +122,6 @@ body {
 }
 
 .todo_list {
-  text-align: center;
   width: 350px;
   position: fixed;
   top: 50%;
