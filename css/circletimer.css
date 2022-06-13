@@ -142,6 +142,9 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.added_list li {
+  margin: 5px;
+}
 .added_list::-webkit-scrollbar {
   width: 8px;
 }
@@ -157,8 +160,7 @@ body {
 }
 .added_list > li:nth-child(1) {
   background: #e84c3c;
-  margin: 5px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .added_works {
@@ -183,8 +185,18 @@ body {
   display: flex;
 }
 .added_works .setlist li {
-  flex: 1;
+  margin: 0 auto;
+}
+.added_works .setlist li:nth-child(1) {
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.added_works .setlist li:nth-child(2) {
   text-align: center;
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .add_timer {
@@ -206,7 +218,7 @@ body {
   width: 150px;
   background: none;
   border: 0;
-  border-bottom: 1px solid #e84c3c;
+  border-bottom: 2px solid #e84c3c;
   color: #f2f2f2;
   font-size: 1em;
 }
@@ -220,15 +232,20 @@ body {
   width: 80px;
   background: none;
   border: 0;
-  border-bottom: 1px solid #e84c3c;
+  border-bottom: 2px solid #e84c3c;
   color: #f2f2f2;
-  font-size: 0.825em;
+  font-size: 1em;
 }
 .add_timer .add_time input::placeholder {
   color: #e84c3c;
+  font-size: 0.825em;
+  font-weight: 600;
 }
 .add_timer .add_time input:focus {
   outline: none;
+}
+.add_timer .add_time input[type=number]::-webkit-outer-spin-button, .add_timer .add_time input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .start_btn {
