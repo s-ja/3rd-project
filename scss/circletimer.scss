@@ -206,6 +206,9 @@ body{
   height: 280px;
   overflow-y: scroll;
   overflow-x: hidden;
+  li{
+    margin: 5px;
+  }
   &::-webkit-scrollbar{
     width: 8px;
   }
@@ -221,8 +224,7 @@ body{
   }
   >li:nth-child(1){
     background: #e84c3c;
-    margin: 5px;
-    border-radius: 10px;
+    border-radius: 20px;
   }
 }
 
@@ -252,8 +254,18 @@ body{
   .setlist{
     display: flex;
     li{
-      flex: 1;
-      text-align: center;
+      margin: 0 auto;
+      &:nth-child(1){
+      width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      }
+      &:nth-child(2){
+        text-align: center;
+        width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
@@ -278,7 +290,7 @@ body{
       width: 150px;
       background: none;
       border: 0;
-      border-bottom: 1px solid #e84c3c;
+      border-bottom: 2px solid #e84c3c;
       color: #f2f2f2;
       font-size: 1em;
       &::placeholder{
@@ -294,14 +306,20 @@ body{
       width: 80px;
       background: none;
       border: 0;
-      border-bottom: 1px solid #e84c3c;
+      border-bottom: 2px solid #e84c3c;
       color: #f2f2f2;
-      font-size: .825em;
+      font-size: 1em;
       &::placeholder{
         color: #e84c3c;
+        font-size: .825em;
+        font-weight: 600;
       }
       &:focus{
         outline: none;
+      }
+      &[type="number"]::-webkit-outer-spin-button,
+      &[type="number"]::-webkit-inner-spin-button{
+        -webkit-appearance: none;
       }
     }
   }
