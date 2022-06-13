@@ -19,6 +19,16 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+span.size_large {
+  font-size: 50px;
+  font-weight: 900;
+  font-variation-settings: "OPSZ" 48;
+}
+
 .d_none {
   display: none;
 }
@@ -80,8 +90,8 @@ body {
 .main_button {
   background: none;
   border: none;
-  color: #e84c3c;
-  font-size: 2rem;
+  color: #f2f2f2;
+  font-size: 1.5rem;
 }
 
 .quote {
@@ -112,18 +122,16 @@ body {
 }
 
 .todo_list {
+  text-align: center;
+  width: 350px;
   position: fixed;
-  left: 40px;
-  bottom: 40px;
-  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 1.2em;
+  width: 350px;
+  padding: 10px;
 }
-
-.list_title_wrap {
-  display: flex;
-  justify-content: space-between;
-}
-
 .list_title {
   font-weight: 900;
   font-size: 2em;
@@ -131,9 +139,9 @@ body {
 }
 
 .added_list {
-  width: 350px;
   height: 280px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .added_list::-webkit-scrollbar {
   width: 8px;
@@ -146,6 +154,11 @@ body {
 }
 .added_list::-webkit-scrollbar-track {
   background: #4F5951;
+  border-radius: 10px;
+}
+.added_list > li:nth-child(1) {
+  background: #e84c3c;
+  margin: 5px;
   border-radius: 10px;
 }
 
@@ -173,6 +186,70 @@ body {
 .added_works .setlist li {
   flex: 1;
   text-align: center;
+}
+
+.add_timer {
+  box-sizing: border-box;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #e84c3c;
+  margin-top: 10px;
+  padding: 5px;
+}
+.add_timer .add_ {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.8em;
+}
+.add_timer .add_name input {
+  width: 150px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #e84c3c;
+  color: #f2f2f2;
+  font-size: 1em;
+}
+.add_timer .add_name input::placeholder {
+  color: #e84c3c;
+}
+.add_timer .add_name input:focus {
+  outline: none;
+}
+.add_timer .add_time input {
+  width: 80px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #e84c3c;
+  color: #f2f2f2;
+  font-size: 0.825em;
+}
+.add_timer .add_time input::placeholder {
+  color: #e84c3c;
+}
+.add_timer .add_time input:focus {
+  outline: none;
+}
+
+.start_btn {
+  align-items: center;
+  background: #e84c3c;
+  padding: 1px 3px;
+  width: 80px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.start_btn a {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 0.825em;
+  padding: 3px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .add_todo {
@@ -229,7 +306,6 @@ body {
   bottom: 10px;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2em;
 }
 
 .example {
