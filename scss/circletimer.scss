@@ -191,9 +191,9 @@ body{
   font-size: 1.2em;
   width: 350px;
   padding: 10px;
-  *{
-    // border: 1px solid lightgreen;
-  }
+  // *{
+  //   border: 1px solid lightgreen;
+  // }
 }
 // Works To Do 타이틀
 .list_title{
@@ -387,6 +387,17 @@ body{
     font-size: 1.25em;
   }
 }
+
+// 테마 기능창
+
+.theme_window{
+  position: absolute;
+  right: 10px;
+  bottom: 30px;
+  width: 300px;
+  height: 400px;
+}
+
 // 테마(컬러웨이) 변경 기능을 위한 버튼 - 유지보수를 위해 남겨둠
 .theme_btn{
   position: fixed;
