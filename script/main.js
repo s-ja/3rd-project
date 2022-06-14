@@ -25,6 +25,15 @@ $(function(){
     //     listOutput(todos);
     //     clock(todo1st);
     // })
+    $(".option_btn").click(function(){
+        if ($(".manipulation").hasClass("effect_on")){
+            $(".todo_list").slideUp(300, 'swing');
+            $(".manipulation").removeClass("effect_on")
+        } else {
+            $(".todo_list").slideDown(300, 'swing');
+            $(".manipulation").addClass("effect_on")
+        }
+    })
     $(document).on("click", ".delete-bt", function(){
         var tg = $(this);
         var STORAGE = loadCurrentData()
