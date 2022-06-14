@@ -11,8 +11,10 @@ $(function(){
         // $("#inputBtn, #startBtn").removeClass("d-none");
     };
     $("#inputBtn").click(function(){
-        checkForm();
+        // checkForm();
+        if (checkForm() !== false){
         todoInput(toLocal);
+        }
     });
     // $("#landingBtn").click(function(){
     //     checkForm();
@@ -27,10 +29,10 @@ $(function(){
     // })
     $(".option_btn").click(function(){
         if ($(".manipulation").hasClass("effect_on")){
-            $(".todo_list").fadeOut();
+            $(".todo_list, .theme_btn").fadeOut();
             $(".manipulation").removeClass("effect_on")
         } else {
-            $(".todo_list").fadeIn();
+            $(".todo_list, .theme_btn").fadeIn();
             $(".manipulation").addClass("effect_on")
         }
     })
