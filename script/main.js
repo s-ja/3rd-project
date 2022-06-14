@@ -11,8 +11,10 @@ $(function(){
         // $("#inputBtn, #startBtn").removeClass("d-none");
     };
     $("#inputBtn").click(function(){
-        checkForm();
+        // checkForm();
+        if (checkForm() !== false){
         todoInput(toLocal);
+        }
     });
     // $("#landingBtn").click(function(){
     //     checkForm();
@@ -27,10 +29,10 @@ $(function(){
     // })
     $(".option_btn").click(function(){
         if ($(".manipulation").hasClass("effect_on")){
-            $(".todo_list").fadeOut();
+            $(".todo_list, .theme_btn").fadeOut();
             $(".manipulation").removeClass("effect_on")
         } else {
-            $(".todo_list").fadeIn();
+            $(".todo_list, .theme_btn").fadeIn();
             $(".manipulation").addClass("effect_on")
         }
     })
@@ -65,7 +67,7 @@ function clearInput(){
 };
 function todoInput(toLocal){
     var _todo = {title: $("#todoText").val(), time: $("#num").val()};
-    console.log(_todo);
+    // console.log(_todo);
     clearInput();
     todos.push(_todo);
     toLocal(todos, loadData);
@@ -132,6 +134,7 @@ function listOutput(todos){
         </ul>`;
     $(".list-output").html(titleAndTime);
     // console.log(titleAndTime);
+    return todoTitle;
 }
 function clock(todo1st){
     // console.log(_storage);
@@ -141,9 +144,28 @@ function clock(todo1st){
             var currentTodo = JSON.parse(localStorage.getItem("todoItem"));
             currentTodo.shift();
             localStorage.setItem("todoItem", JSON.stringify(currentTodo));
-            listOutput(currentTodo);
-            updateList(currentTodo);
-            $("#startBtn").click();
+            console.log(currentTodo);
+            if (currentTodo.length !== 0){
+                listOutput(currentTodo);
+                updateList(currentTodo);
+                $("#startBtn").click();
+            } else {
+                // alert("끝")
+                $("#example-timer").html(
+                    `<div id="ct-circle-container">
+                        <svg>
+                            <circle r="25%" cx="50%" cy="50%" stroke-dasharray="158%" style="stroke-dashoffset: 0%;"></circle>
+                        </svg>
+                    </div>`
+                )
+                $(".list-output").html(
+                    `<ul>
+                        <li>ALL CLEAR</li>
+                        <li>*</li>
+                    </ul>`
+                )
+                $(".option_btn").click();
+            }
         },
         // 남은 원의 면적을 측정하여 남은 시간을 표시
         onUpdate: function(elapsed) {
