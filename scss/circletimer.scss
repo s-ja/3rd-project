@@ -258,12 +258,14 @@ body{
       margin: 0 auto;
       &:nth-child(1){
       width: 200px;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       }
       &:nth-child(2){
         text-align: center;
         width: 80px;
+        white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }

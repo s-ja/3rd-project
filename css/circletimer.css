@@ -191,12 +191,14 @@ body {
 }
 .added_works .setlist li:nth-child(1) {
   width: 200px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .added_works .setlist li:nth-child(2) {
   text-align: center;
   width: 80px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
